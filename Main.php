@@ -6,4 +6,7 @@ use Xeanton\ArrayRotation\ArrayRotation;
 
 $app = new ArrayRotation();
 
-$app->run(str_split($argv[1]), new \Xeanton\ArrayRotation\HardcodedConfig());
+$command_codes = str_split($argv[1]);
+array_push($command_codes, 'print_simple');
+
+$app->run($command_codes, new \Xeanton\ArrayRotation\HardcodedConfig());
