@@ -8,8 +8,7 @@
 
 namespace Xeanton\ArrayRotation;
 
-
 interface MatrixPrinterInterface
 {
-
+    public function printMatrix(Matrix $matrix);
 }

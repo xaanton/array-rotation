@@ -17,7 +17,5 @@ class ArrayRotation
                 $config->getCommand($command_code, $matrix)
             );
         }
-
-        $matrix->printMatrix();
     }
 }

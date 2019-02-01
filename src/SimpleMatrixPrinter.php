@@ -8,8 +8,16 @@
 
 namespace Xeanton\ArrayRotation;
 
-
-class SimpleMatrixPrinter
+class SimpleMatrixPrinter implements MatrixPrinterInterface
 {
-
+    public function printMatrix(Matrix $matrix)
+    {
+        $array = $matrix->getArray();
+        foreach ($array as $row) {
+            foreach ($row as $val) {
+                echo $val;
+            }
+            echo PHP_EOL;
+        }
+    }
 }

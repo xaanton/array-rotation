@@ -96,6 +96,11 @@ class HardcodedConfig implements ConfigInterface
                     new ArrayShifterReverse(),
                     2
                 );
+            case "print_simple":
+                return new PrintMatrixCommand(
+                    $matrix,
+                    new SimpleMatrixPrinter()
+                );
         }
         return null;
     }

@@ -45,14 +45,8 @@ class Matrix
         }
     }
 
-    public function printMatrix()
+    public function getArray()
     {
-        foreach ($this->matrix as $row) {
-            foreach ($row as $val) {
-                echo $val;
-            }
-            echo PHP_EOL;
-        }
+        return $this->matrix;
     }
-
 }
