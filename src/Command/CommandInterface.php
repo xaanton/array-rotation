@@ -6,6 +6,8 @@
  * Time: 10:01
  */
 
+declare(strict_types=1);
+
 namespace Xeanton\ArrayRotation\Command;
 
 use Xeanton\ArrayRotation\Matrix;

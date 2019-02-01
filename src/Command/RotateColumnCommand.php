@@ -6,6 +6,8 @@
  * Time: 10:04
  */
 
+declare(strict_types=1);
+
 namespace Xeanton\ArrayRotation\Command;
 
 use Xeanton\ArrayRotation\ArrayShifter\ArrayShifterInterface;

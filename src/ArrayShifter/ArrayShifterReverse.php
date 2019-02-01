@@ -6,6 +6,8 @@
  * Time: 11:30
  */
 
+declare(strict_types=1);
+
 namespace Xeanton\ArrayRotation\ArrayShifter;
 
 class ArrayShifterReverse implements ArrayShifterInterface

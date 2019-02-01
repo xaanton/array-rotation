@@ -6,6 +6,8 @@
  * Time: 10:08
  */
 
+declare(strict_types=1);
+
 namespace Xeanton\ArrayRotation;
 
 class Matrix
@@ -17,12 +19,12 @@ class Matrix
         $this->matrix = $matrix;
     }
 
-    public function getRow($index)
+    public function getRow($index) : array
     {
         return $this->matrix[$index];
     }
 
-    public function getColumn($index)
+    public function getColumn($index) : array
     {
         $column = array();
 
@@ -33,19 +35,19 @@ class Matrix
         return $column;
     }
 
-    public function setRow($index, $row)
+    public function setRow($index, $row) : void
     {
         $this->matrix[$index] = $row;
     }
 
-    public function setColumn($index, $column)
+    public function setColumn($index, $column) : void
     {
         for ($i = 0; $i < count($column); $i++) {
             $this->matrix[$i][$index] = $column[$i];
         }
     }
 
-    public function getArray()
+    public function getArray() : array
     {
         return $this->matrix;
     }
