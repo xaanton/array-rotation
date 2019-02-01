@@ -6,9 +6,9 @@
  * Time: 11:25
  */
 
-namespace Xeanton\ArrayRotation;
+namespace Xeanton\ArrayRotation\ArrayShifter;
 
 interface ArrayShifterInterface
 {
-    public function shiftArray($array);
+    public function shiftArray(array $array): array;
 }

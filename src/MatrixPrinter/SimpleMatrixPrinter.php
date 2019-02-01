@@ -6,7 +6,9 @@
  * Time: 12:29
  */
 
-namespace Xeanton\ArrayRotation;
+namespace Xeanton\ArrayRotation\MatrixPrinter;
+
+use Xeanton\ArrayRotation\Matrix;
 
 class SimpleMatrixPrinter implements MatrixPrinterInterface
 {

@@ -6,11 +6,11 @@
  * Time: 11:30
  */
 
-namespace Xeanton\ArrayRotation;
+namespace Xeanton\ArrayRotation\ArrayShifter;
 
 class ArrayShifterReverse implements ArrayShifterInterface
 {
-    public function shiftArray($array)
+    public function shiftArray(array $array): array
     {
         $array_temp = $array;
         $array[0] = $array_temp[count($array_temp)-1];
