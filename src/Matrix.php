@@ -51,4 +51,16 @@ class Matrix
     {
         return $this->matrix;
     }
+
+    public function toString() : string
+    {
+        $result = '';
+        foreach ($this->matrix as $row) {
+            foreach ($row as $val) {
+                $result = $result . $val;
+            }
+            $result = $result . '/';
+        }
+        return substr($result, 0, -1);
+    }
 }
