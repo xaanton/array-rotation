@@ -34,4 +34,5 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
         
       # run tests!
-      - run: php Main.php baciefjhgkdl
+      - run: composer install -n --prefer-dist
+      - run: composer test
