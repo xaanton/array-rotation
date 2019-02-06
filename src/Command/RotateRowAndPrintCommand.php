@@ -17,18 +17,15 @@ class RotateRowAndPrintCommand implements CommandInterface
     private $index;
     private $arrayShifter;
     private $printer;
-    private $commandCode;
 
     public function __construct(
         ArrayShifterInterface $arrayShifter,
         int $index,
-        MatrixPrinterInterface $printer,
-        string $commandCode
+        MatrixPrinterInterface $printer
     ) {
         $this->index = $index;
         $this->arrayShifter = $arrayShifter;
         $this->printer = $printer;
-        $this->commandCode = $commandCode;
     }
 
     public function execute(Matrix $matrix): Matrix
@@ -38,15 +35,8 @@ class RotateRowAndPrintCommand implements CommandInterface
             $this->index,
             $this->arrayShifter->shiftArray($new_matrix->getRow($this->index))
         );
-        $this->printExecuteResult($new_matrix);
+        $this->printer->printMatrix($new_matrix);
 
         return $new_matrix;
-    }
-
-    private function printExecuteResult(Matrix $matrix)
-    {
-        echo 'Result of executing command ' . $this->commandCode . ' ' . PHP_EOL;
-        $this->printer->printMatrix($matrix);
-        echo PHP_EOL;
     }
 }
