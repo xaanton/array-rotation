@@ -14,7 +14,7 @@ use Xeanton\ArrayRotation\Matrix;
 
 class CommandInvoker
 {
-    public function executeCommand(CommandInterface $command, Matrix $matrix): Matrix
+    public function executeCommand(CommandInterface $command, Matrix $matrix) : Matrix
     {
         return $command->execute($matrix);
     }

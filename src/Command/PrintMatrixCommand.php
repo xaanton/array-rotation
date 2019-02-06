@@ -15,7 +15,6 @@ use Xeanton\ArrayRotation\MatrixPrinter\MatrixPrinterInterface;
 
 class PrintMatrixCommand implements CommandInterface
 {
-
     private $printer;
 
     public function __construct(MatrixPrinterInterface $printer)
@@ -23,11 +22,12 @@ class PrintMatrixCommand implements CommandInterface
         $this->printer = $printer;
     }
 
-    public function execute(Matrix $matrix): Matrix
+    public function execute(Matrix $matrix) : Matrix
     {
         $this->printer->printMatrix(
             $matrix
         );
+
         return $matrix;
     }
 }

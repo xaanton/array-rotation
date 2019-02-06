@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-06
- * Time: 13:03
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation\Command;
 
@@ -28,7 +25,7 @@ class RotateRowAndPrintCommand implements CommandInterface
         $this->printer = $printer;
     }
 
-    public function execute(Matrix $matrix): Matrix
+    public function execute(Matrix $matrix) : Matrix
     {
         $new_matrix = new Matrix($matrix->getArray());
         $new_matrix->setRow(

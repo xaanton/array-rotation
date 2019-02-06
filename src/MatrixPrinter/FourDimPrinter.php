@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-06
- * Time: 12:23
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation\MatrixPrinter;
 

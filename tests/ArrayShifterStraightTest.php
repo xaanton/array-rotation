@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-01
- * Time: 15:38
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation;
 
@@ -25,15 +22,15 @@ class ArrayShifterStraightTest extends TestCase
 
     public function testCaseOne() : void
     {
-        $actual = $this->arrayShifterStraight->shiftArray([1,2,3]);
-        $expected = [2,3,1];
-        $this->assertEquals($expected, $actual);
+        $actual = $this->arrayShifterStraight->shiftArray([1, 2, 3]);
+        $expected = [2, 3, 1];
+        $this->assertSame($expected, $actual);
     }
 
     public function testCaseTwo() : void
     {
-        $actual = $this->arrayShifterStraight->shiftArray([1,2,3,5,6,7,8,9,10]);
-        $expected = [2,3,5,6,7,8,9,10,1];
-        $this->assertEquals($expected, $actual);
+        $actual = $this->arrayShifterStraight->shiftArray([1, 2, 3, 5, 6, 7, 8, 9, 10]);
+        $expected = [2, 3, 5, 6, 7, 8, 9, 10, 1];
+        $this->assertSame($expected, $actual);
     }
 }

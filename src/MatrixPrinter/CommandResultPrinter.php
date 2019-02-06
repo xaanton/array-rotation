@@ -1,13 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-06
- * Time: 15:12
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation\MatrixPrinter;
-
 
 use Xeanton\ArrayRotation\Matrix;
 
@@ -20,7 +16,7 @@ class CommandResultPrinter implements MatrixPrinterInterface
         $this->commandCode = $commandCode;
     }
 
-    public function printMatrix(Matrix $matrix): void
+    public function printMatrix(Matrix $matrix) : void
     {
         echo 'Result of executing command ' . $this->commandCode . ':' . PHP_EOL;
         $array = $matrix->getArray();

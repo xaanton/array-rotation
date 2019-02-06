@@ -15,6 +15,7 @@ use Xeanton\ArrayRotation\Matrix;
 
 interface FactoryInterface
 {
-    public function makeMatrix(): Matrix;
-    public function makeCommand(string $command_str): CommandInterface;
+    public function makeMatrix() : Matrix;
+
+    public function makeCommand(string $command_str) : CommandInterface;
 }

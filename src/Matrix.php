@@ -26,7 +26,7 @@ class Matrix
 
     public function getColumn($index) : array
     {
-        $column = array();
+        $column = [];
 
         for ($i = 0; $i < count($this->matrix); $i++) {
             array_push($column, $this->matrix[$i][$index]);
@@ -61,6 +61,7 @@ class Matrix
             }
             $result = $result . '/';
         }
+
         return substr($result, 0, -1);
     }
 }

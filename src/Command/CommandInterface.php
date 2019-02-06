@@ -14,5 +14,5 @@ use Xeanton\ArrayRotation\Matrix;
 
 interface CommandInterface
 {
-    public function execute(Matrix $matrix): Matrix;
+    public function execute(Matrix $matrix) : Matrix;
 }

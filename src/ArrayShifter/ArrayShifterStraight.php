@@ -12,14 +12,15 @@ namespace Xeanton\ArrayRotation\ArrayShifter;
 
 class ArrayShifterStraight implements ArrayShifterInterface
 {
-    public function shiftArray(array $array): array
+    public function shiftArray(array $array) : array
     {
         $array_temp = $array;
-        $array[count($array)-1] = $array_temp[0];
+        $array[count($array) - 1] = $array_temp[0];
 
-        for ($i = count($array_temp)-2; $i >= 0; $i--) {
-            $array[$i] = $array_temp[$i+1];
+        for ($i = count($array_temp) - 2; $i >= 0; $i--) {
+            $array[$i] = $array_temp[$i + 1];
         }
+
         return $array;
     }
 }

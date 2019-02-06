@@ -24,13 +24,14 @@ class RotateRowCommand implements CommandInterface
         $this->arrayShifter = $arrayShifter;
     }
 
-    public function execute(Matrix $matrix): Matrix
+    public function execute(Matrix $matrix) : Matrix
     {
         $new_matrix = new Matrix($matrix->getArray());
         $new_matrix->setRow(
             $this->index,
             $this->arrayShifter->shiftArray($new_matrix->getRow($this->index))
         );
+
         return $new_matrix;
     }
 }

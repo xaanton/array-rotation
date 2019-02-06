@@ -27,15 +27,15 @@ class ArrayShifterReverseTest extends TestCase
 
     public function testCaseOne() : void
     {
-        $actual = $this->arrayShifterReverse->shiftArray([1,2,3]);
-        $expected = [3,1,2];
-        $this->assertEquals($expected, $actual);
+        $actual = $this->arrayShifterReverse->shiftArray([1, 2, 3]);
+        $expected = [3, 1, 2];
+        $this->assertSame($expected, $actual);
     }
 
     public function testCaseTwo() : void
     {
-        $actual = $this->arrayShifterReverse->shiftArray([1,2,3,5,6,7,8,9,10]);
-        $expected = [10,1,2,3,5,6,7,8,9];
-        $this->assertEquals($expected, $actual);
+        $actual = $this->arrayShifterReverse->shiftArray([1, 2, 3, 5, 6, 7, 8, 9, 10]);
+        $expected = [10, 1, 2, 3, 5, 6, 7, 8, 9];
+        $this->assertSame($expected, $actual);
     }
 }

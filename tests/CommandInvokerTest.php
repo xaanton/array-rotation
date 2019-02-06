@@ -1,14 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-05
- * Time: 11:48
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation;
 
-use InvokerTest;
 use PHPUnit\Framework\TestCase;
 use Xeanton\ArrayRotation\Command\CommandInterface;
 use Xeanton\ArrayRotation\Command\CommandInvoker;
@@ -20,12 +16,12 @@ class CommandInvokerTest extends TestCase
      */
     protected $commandInvoker;
 
-    protected function setUp(): void
+    protected function setUp() : void
     {
         $this->commandInvoker = new CommandInvoker();
     }
 
-    public function testInvoker()
+    public function testInvoker() : void
     {
         $stubMatrix = $this->createMock(Matrix::class);
         $stubCommand = $this->createMock(CommandInterface::class);

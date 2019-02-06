@@ -12,5 +12,5 @@ namespace Xeanton\ArrayRotation\ArrayShifter;
 
 interface ArrayShifterInterface
 {
-    public function shiftArray(array $array): array;
+    public function shiftArray(array $array) : array;
 }

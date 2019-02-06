@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xearts
- * Date: 2019-02-01
- * Time: 16:03
- */
+
+declare(strict_types=1);
+
 
 namespace Xeanton\ArrayRotation;
 
@@ -30,13 +27,13 @@ class HardcodedFactoryTest extends TestCase
     {
         $actual = $this->factory->makeMatrix()->getArray();
 
-        $expected = array(
-            array(1, 2, 3),
-            array(4, 5, 6),
-            array(7, 8, 9)
-        );
+        $expected = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
 
-        $this->assertEquals($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     public function testMatrixTestCaseTwo() : void
@@ -48,36 +45,36 @@ class HardcodedFactoryTest extends TestCase
 
     public function testMakeCommandTestCaseOne() : void
     {
-        $actual = $this->factory->makeCommand("a");
+        $actual = $this->factory->makeCommand('a');
 
-        $this->assertInstanceOf(RotateRowCommand::class, $actual, "Test2");
+        $this->assertInstanceOf(RotateRowCommand::class, $actual, 'Test2');
     }
 
     public function testMakeCommandTestCaseTwo() : void
     {
-        $actual = $this->factory->makeCommand("i");
+        $actual = $this->factory->makeCommand('i');
 
-        $this->assertInstanceOf(RotateRowCommand::class, $actual, "Test1");
+        $this->assertInstanceOf(RotateRowCommand::class, $actual, 'Test1');
     }
 
     public function testMakeCommandTestCaseThree() : void
     {
-        $actual = $this->factory->makeCommand("k");
+        $actual = $this->factory->makeCommand('k');
 
-        $this->assertInstanceOf(RotateColumnCommand::class, $actual, "Test1");
+        $this->assertInstanceOf(RotateColumnCommand::class, $actual, 'Test1');
     }
 
     public function testMakeCommandTestCaseFour() : void
     {
-        $actual = $this->factory->makeCommand("f");
+        $actual = $this->factory->makeCommand('f');
 
-        $this->assertInstanceOf(RotateColumnCommand::class, $actual, "Test1");
+        $this->assertInstanceOf(RotateColumnCommand::class, $actual, 'Test1');
     }
 
     public function testMakeCommandTestCaseFive() : void
     {
-        $actual = $this->factory->makeCommand("print_simple");
+        $actual = $this->factory->makeCommand('print_simple');
 
-        $this->assertInstanceOf(PrintMatrixCommand::class, $actual, "Test1");
+        $this->assertInstanceOf(PrintMatrixCommand::class, $actual, 'Test1');
     }
 }
