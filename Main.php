@@ -6,5 +6,5 @@ use Xeanton\ArrayRotation\ArrayRotation;
 
 $app = new ArrayRotation();
 
-$matrix = $app->run($argv[1], new \Xeanton\ArrayRotation\Factory\HardcodedFactory());
-echo $matrix->toString();
+$matrix = $app->run($argv[1], new \Xeanton\ArrayRotation\Factory\HardcodedFactoryFourDim());
+//echo $matrix->toString();

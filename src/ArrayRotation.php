@@ -12,7 +12,7 @@ class ArrayRotation
     public function run(string $command_codes, FactoryInterface $config)
     {
         $command_codes_array = str_split($command_codes);
-        //array_push($command_codes_array, 'print_simple');
+        array_push($command_codes_array, 'print_simple');
         $matrix = $config->makeMatrix();
         $invoker = new CommandInvoker();
 
