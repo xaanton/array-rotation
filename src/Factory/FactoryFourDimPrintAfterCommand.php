@@ -3,12 +3,13 @@
  * Created by PhpStorm.
  * User: xearts
  * Date: 2019-02-06
- * Time: 12:09
+ * Time: 12:56
  */
 
 namespace Xeanton\ArrayRotation\Factory;
 
 use Xeanton\ArrayRotation\Command\CommandInterface;
+use Xeanton\ArrayRotation\Command\RotateRowAndPrintCommand;
 use Xeanton\ArrayRotation\MatrixPrinter\FourDimPrinter;
 use Xeanton\ArrayRotation\Command\RotateRowCommand;
 use Xeanton\ArrayRotation\Command\RotateColumnCommand;
@@ -16,8 +17,9 @@ use Xeanton\ArrayRotation\Command\PrintMatrixCommand;
 use Xeanton\ArrayRotation\ArrayShifter\ArrayShifterStraight;
 use Xeanton\ArrayRotation\ArrayShifter\ArrayShifterReverse;
 use Xeanton\ArrayRotation\Matrix;
+use Xeanton\ArrayRotation\Other\CanPrint;
 
-class HardcodedFactoryFourDim implements FactoryInterface
+class FactoryFourDimPrintAfterCommand implements FactoryInterface
 {
     public function makeMatrix(): Matrix
     {
@@ -36,87 +38,119 @@ class HardcodedFactoryFourDim implements FactoryInterface
         switch ($command_type) {
             // Straight row shifting
             case "1":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterStraight(),
-                    0
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "q":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterStraight(),
-                    1
+                    1,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "a":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterStraight(),
-                    2
+                    2,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "z":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterStraight(),
-                    3
+                    3,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             // Reverse row shifting
             case "5":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterReverse(),
-                    0
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "t":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterReverse(),
-                    1
+                    1,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "g":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterReverse(),
-                    2
+                    2,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "b":
-                return new RotateRowCommand(
+                return new RotateRowAndPrintCommand(
                     new ArrayShifterReverse(),
-                    3
+                    3,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             // Straight column shifting
             case "2":
                 return new RotateColumnCommand(
                     new ArrayShifterStraight(),
-                    0
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "w":
                 return new RotateColumnCommand(
                     new ArrayShifterStraight(),
-                    1
+                    1,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "e":
                 return new RotateColumnCommand(
                     new ArrayShifterStraight(),
-                    2
+                    2,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "r":
                 return new RotateColumnCommand(
                     new ArrayShifterStraight(),
-                    3
+                    3,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             // Reverse column shifting
             case "x":
                 return new RotateColumnCommand(
                     new ArrayShifterReverse(),
-                    0
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "s":
                 return new RotateColumnCommand(
                     new ArrayShifterReverse(),
-                    1
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "d":
                 return new RotateColumnCommand(
                     new ArrayShifterReverse(),
-                    2
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "f":
                 return new RotateColumnCommand(
                     new ArrayShifterReverse(),
-                    3
+                    0,
+                    new FourDimPrinter(),
+                    $command_type
                 );
             case "print_simple":
                 return new PrintMatrixCommand(
