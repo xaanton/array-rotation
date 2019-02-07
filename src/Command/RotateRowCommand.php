@@ -17,11 +17,16 @@ class RotateRowCommand implements CommandInterface
 {
     private $index;
     private $arrayShifter;
+    private $commandCode;
 
-    public function __construct(ArrayShifterInterface $arrayShifter, int $index)
-    {
+    public function __construct(
+        ArrayShifterInterface $arrayShifter,
+        int $index,
+        string $commandCode
+    ) {
         $this->index = $index;
         $this->arrayShifter = $arrayShifter;
+        $this->commandCode = $commandCode;
     }
 
     public function execute(Matrix $matrix) : Matrix
@@ -33,5 +38,10 @@ class RotateRowCommand implements CommandInterface
         );
 
         return $new_matrix;
+    }
+
+    public function getCommandCode() : string
+    {
+        return $this->commandCode;
     }
 }

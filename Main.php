@@ -7,6 +7,9 @@ require_once 'vendor/autoload.php';
 use Xeanton\ArrayRotation\ArrayRotation;
 
 $app = new ArrayRotation();
-
-$matrix = $app->run($argv[1], new \Xeanton\ArrayRotation\Factory\FactoryFourDimPrintAfterCommand());
+$factory = new \Xeanton\ArrayRotation\Factory\FactoryLogWrapper(new \Xeanton\ArrayRotation\Factory\HardcodedFactoryFourDim());
+$matrix = $app->run(
+    $argv[1],
+    $factory
+);
 //echo $matrix->toString();

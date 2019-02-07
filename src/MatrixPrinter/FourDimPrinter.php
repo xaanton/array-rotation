@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Xeanton\ArrayRotation\MatrixPrinter;
 
 use Xeanton\ArrayRotation\Matrix;
@@ -15,7 +14,7 @@ class FourDimPrinter implements MatrixPrinterInterface
         foreach ($array as $row) {
             foreach ($row as $val) {
                 echo $val;
-                for ($i = strlen($val); $i <= 3; $i++) {
+                for ($i = strlen((string) $val); $i <= 3; $i++) {
                     echo ' ';
                 }
             }

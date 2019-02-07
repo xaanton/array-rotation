@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Xeanton\ArrayRotation;
 
 use PHPUnit\Framework\TestCase;
@@ -38,25 +37,29 @@ class RotateCommandTest extends TestCase
             ['a',
                 new RotateRowCommand(
                     new ArrayShifterStraight(),
-                    0
+                    0,
+                    'a'
                 )
             ],
             ['i',
                 new RotateRowCommand(
                     new ArrayShifterReverse(),
-                    0
+                    0,
+                    'i'
                 )
             ],
             ['l',
                 new RotateColumnCommand(
                     new ArrayShifterStraight(),
-                    0
+                    0,
+                    'l'
                 )
             ],
             ['f',
                 new RotateColumnCommand(
                     new ArrayShifterReverse(),
-                    2
+                    2,
+                    'f'
                 )
             ]
         ];
