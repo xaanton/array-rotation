@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Xeanton\ArrayRotation\Factory;
 
 use Xeanton\ArrayRotation\Command\CommandInterface;
